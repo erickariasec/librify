@@ -1,0 +1,125 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 75px;
+  padding: 1rem 2rem;
+  background: var(--logo-content-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+  padding: 1rem 2rem;
+  background-color: var(--logo-content-background-color);
+  box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.12);
+  z-index: 15;
+}
+
+.navbar .max-width {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo-librify {
+  text-decoration: none;
+  color: var(--red-color-text);
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--mukta-font);
+}
+
+.navbar .logo-iti {
+  height: 100%;
+  position: relative;
+  z-index: 30;
+}
+
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+.navbar .menu li a {
+  position: relative;
+  display: block;
+  color: var(--red-color-text);
+  font-size: 2rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 2.5rem;
+  transition: color 0.3s ease;
+}
+.navbar .menu li a:hover {
+  color: var(--red-hover-color-text);
+}
+.navbar.sticky .menu li a:hover {
+  color: var(--red-hover-color-text);
+}
+.navbar .menu li a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  top: 35px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--red-hover-color-text);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.navbar .menu li a:hover::before {
+  transform: scaleX(1);
+}
+
+.bars-btn {
+  padding: 10px;
+  color: var(--red-color-text);
+  font-size: 2.3rem;
+  cursor: pointer;
+  display: none;
+}
+/* !--------------- Finishes Navbar Styling -------------- */
+
+@media (max-width: 947px) {
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+  .menu-btn i.active::before {
+    content: "\f00d";
+  }
+  .navbar .menu {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    background-color: var(--logo-content-background-color);
+    text-align: center;
+    padding-top: 8rem;
+    transition: all 0.3s ease;
+  }
+  .navbar .menu.active {
+    left: 0;
+  }
+  .navbar .menu li {
+    display: block;
+  }
+  .navbar .menu li a {
+    display: inline-block;
+    margin: 2rem 0;
+    font-size: 2.4rem;
+  }
+  .navbar .menu li a::before {
+    top: 45px;
+  }
+}
